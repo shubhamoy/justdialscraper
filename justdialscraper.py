@@ -15,11 +15,11 @@ print(25*"=")
 print("Just Dial Scraper")
 print(25*"=")
 
-url = 'http://www.justdial.com/functions/ajxsearch.php?national_search=0&act='
-'pagination&city={0}&search={1}&page={2}'
-what = input("Enter your query: ")
+url = 'http://www.justdial.com/functions/ajxsearch.php?national_search=0&act'\
+'=pagination&city={0}&search={1}&page={2}'
+what = input("Enter your Query: ")
 what = what.replace(' ', '+')
-where = input("Enter the City: ")
+where = input("Enter the Location: ")
 
 with open(what+"_"+where+'.csv', 'w') as f:
     f.write('company, address, phone\n')
@@ -27,7 +27,7 @@ with open(what+"_"+where+'.csv', 'w') as f:
     while True:
         print('Scraping Page', page)
         resp = requests.get(url.format(where, what, page))
-
+        
         if not resp.json()['paidDocIds']:
             print(25*"-")
             print('Scraping Finished')
