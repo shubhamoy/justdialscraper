@@ -4,7 +4,7 @@ It takes the search term and location as input. After successful scraping, it wr
 
 #### Usage
 >~~~
->python3 justdialscraper.py
+>$python3 justdialscraper.py
 >=========================
 >Just Dial Scraper
 >=========================
